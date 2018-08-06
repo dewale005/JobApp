@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
 # Quick-start development settings - unsuitable for production
@@ -140,3 +140,15 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static_cdn', "media_root")
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+# Let's Encrpyt ssl/tls https
+
+CORS_REPLACE_HTTPS_REFERER          = False
+HOST_SCHEME                         = "https://"
+SECURE_PROXY_SSL_HEADER             = None
+SECURE_SSL_REDIRECT                 = False
+SESSION_COOKIE_SECURE               = False
+CSRF_COOKIE_SECURE                  = False
+SECURE_HSTS_INCLUDE_SUBDOMIANS      = False
+SECURE_HSTS_SECONDS                 = None
+SECURE_FRAME_DENY                   = False 
